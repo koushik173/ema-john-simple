@@ -1,4 +1,5 @@
 import React, { useEffect,useState } from 'react';
+import Cart from '../Cart/Cart';
 import Products from '../Products/Products';
 import './Shop.css';
 // import fakeData from '../../fakeData';
@@ -11,7 +12,7 @@ const Shop = () => {
         fetch('https://raw.githubusercontent.com/ProgrammingHero1/ema-john-simple-resources/master/fakeData/products.JSON')
         .then(res=>res.json())
         .then(data=>{
-            const first10 = data.slice(0,10);
+            const first10 = data.slice(22,35);
             setProducts(first10)
 
         })
@@ -19,7 +20,7 @@ const Shop = () => {
     // console.log(products);
 
     const handleAddProduct = (product) =>{
-        console.log("Product Added", product);
+        // console.log("Product Added", product);
         const newCart = [...cart, product]
         setCart(newCart);
     }
@@ -33,8 +34,7 @@ const Shop = () => {
                 }
             </div>
             <div className="cart-container">
-                <h3>This is card</h3>
-                <h5>Order Summery: {cart.length}</h5>
+                <Cart cart = {cart}></Cart>
             </div>
             
         </div>
