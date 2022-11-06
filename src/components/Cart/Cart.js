@@ -25,6 +25,8 @@ else if(total>0){
 const tex = (total/10).toFixed(2);
 const grandTotal = (total + shipping+ Number(tex)).toFixed(2);
 
+ 
+
     return (
         <div>
             <h3>Order Summery</h3>
